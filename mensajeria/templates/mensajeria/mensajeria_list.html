@@ -1,0 +1,28 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block entregafinal_content %}
+
+<h2>Lista de mensajes</h2>
+{% if user.is_authenticated %}
+<a class="card_custom" href="{% url 'mensajeria:mensajeria-add' %}">Crear nuevo Mensaje</a>
+{% endif %}
+<hr></hr>
+<ul>
+    
+    <li>
+        {% if user.is_authenticated %}
+        
+        <a href="{% url 'mensajeria:mensajeria-enviados' %}">
+                <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> Enviados</i>
+            </a>
+
+        <a href="{% url 'mensajeria:mensajeria-recibidos' %}">
+            <i class="fa fa-eye" label="recibidos" style="color: rgb(255, 0, 0);"> Recibidos</i>
+            </a>
+        
+        {% endif %}
+    </li>
+   
+</ul>
+
+{% endblock %}

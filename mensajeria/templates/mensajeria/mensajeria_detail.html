@@ -1,0 +1,13 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block entregafinal_content %}
+
+<h2>Detalle del Mensaje</h2>
+<hr></hr>
+<p><h3>Mensaje: {{ mensajeria.title }}</h3></p>
+<p><h4>Emisor: {{ mensajeria.emisor }}</h4></p>
+<p><h4>Receptor: {{ mensajeria.receptor }}</h4></p>
+<h4>Descripción:</h4>
+<p><textarea readonly rows="7" cols="90" >{{ mensajeria.content }}</textarea></p>
+<p><a class="btn2 btn-primary" href="{% url 'mensajeria:mensajeria-list' %}">Regresar a la lista de mensajes</a></p>
+{% endblock %}
